@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
 function App() {
   const [weather, setWeather] = useState();
@@ -17,7 +18,7 @@ function App() {
     fetchWeather("london");
   }, []);
 
-  return <div></div>;
+  return <div>{weather && <Card weather={weather} />}</div>;
 }
 
 export default App;

@@ -1,0 +1,28 @@
+const colorDescription = {
+  113: "from #FBCA0B to #EEDE91",
+  116: "from #FBCA0B to #C4CDCC",
+  119: "from #C4CDCC to #9E9E9E",
+  122: "from #9E9E9E to #C4CDCC",
+  143: "from #E0E7EF to #C4CDCC",
+  176: "from #EEDE91 to #BEDDE2",
+  179: "from #C4CDCC to #FFFFFF",
+  182: "from #E1E1E1 to #FFFFFF",
+  185: "from #FFFFFF to #C4CDCC",
+  200: "from #9E9E9E to #EAD69B",
+  227: "from #FFFFFF to #C4CDCC",
+  230: "from #DCE1E1 to #FFFFFF",
+  248: "from #FFFFFF to #C4CDCC",
+  260: "from #FFFFFF to #E7EBEA",
+  263: "from #FFFFFF to #E7EBEA",
+  266: "from #FFFFFF to #E7EBEA",
+  281: "from #FFFFFF to #E7EBEA",
+  284: "from #FFFFFF to #E7EBEA",
+  293: "from #BCDBDE to #E1E7E7",
+  296: "from #BCDBDE to #E1E7E7",
+  299: "from #C4CDCC to #71B0BD",
+  302: "from #C4CDCC to #71B0BD",
+  305: "from #C4CDCC to #0089A9",
+  308: "from #C4CDCC to #0089A9",
+};
+
+export default colorDescription;

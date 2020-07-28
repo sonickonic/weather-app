@@ -1,0 +1,48 @@
+.card {
+  width: 18em;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  &__title {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    margin-bottom: 3.33em;
+  }
+
+  &__img {
+    margin-bottom: 2.66em;
+  }
+
+  &__descriptions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    &--lighter {
+      color: var(--secondary-color);
+      text-transform: none;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    &--bigger {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 43px;
+      text-align: right;
+      letter-spacing: 0.095em;
+      margin-left: 2rem;
+    }
+  }
+}

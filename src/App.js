@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "./Card";
+import Input from "./Input";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
   const [weather, setWeather] = useState();
   const baseEndpoint = "http://api.weatherstack.com/current";
 
@@ -14,11 +16,26 @@ function App() {
     setWeather(data);
   }
 
-  useEffect(() => {
-    fetchWeather("london");
-  }, []);
+  const search = () => {
+    fetchWeather(`${inputValue}`);
 
-  return <div>{weather && <Card weather={weather} />}</div>;
+    setInputValue("");
+  };
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  return (
+    <div className="App">
+      <Input
+        value={inputValue}
+        handleChange={handleChange}
+        handleClick={search}
+      />
+      {weather && <Card weather={weather} />}
+    </div>
+  );
 }
 
 export default App;

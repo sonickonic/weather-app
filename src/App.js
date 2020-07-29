@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import Input from "./Input";
 import UnitToggle from "./UnitToggle";
+import Loader from "./Loader";
 import "./App.scss";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [weather, setWeather] = useState();
   const [unit, setUnit] = useState("m");
   const baseEndpoint = "http://api.weatherstack.com/current";
+  const [loading, setLoading] = useState(false);
 
   async function fetchWeather(query) {
     const accessKey = "2efb97218011e382b9523f8267818ed5";
@@ -17,9 +19,11 @@ function App() {
     );
     const data = await res.json();
     setWeather(data);
+    setTimeout(() => setLoading(false), 500);
   }
 
   const search = () => {
+    setLoading(true);
     fetchWeather(`${inputValue}`);
     setInputValue("");
   };
@@ -62,7 +66,7 @@ function App() {
         handleChange={handleChange}
         handleClick={search}
       />
-      {weather && <Card weather={weather} />}
+      {loading ? <Loader /> : <Card weather={weather} />}
     </div>
   );
 }

@@ -22,10 +22,13 @@ function App() {
     setTimeout(() => setLoading(false), 500);
   }
 
-  const search = () => {
-    setLoading(true);
-    fetchWeather(`${inputValue}`);
-    setInputValue("");
+  const search = (e) => {
+    if (inputValue.length === 0) return true;
+    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
+      setLoading(true);
+      fetchWeather(`${inputValue}`);
+      setInputValue("");
+    }
   };
 
   const switchUnits = (e) => {

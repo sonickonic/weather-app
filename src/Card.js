@@ -1,6 +1,8 @@
 import React from "react";
 import colorDescription from "./color-description";
 import "./Card.scss";
+import "./Details.scss";
+import Details from "./Details";
 
 function Card({ weather }) {
   return (
@@ -28,6 +30,16 @@ function Card({ weather }) {
               {weather.current.temperature}°
             </span>
           </div>
+          <input
+            className="details__input"
+            type="checkbox"
+            name="toggle"
+            id="toggle"
+          />
+          <label className="details__label" htmlFor="toggle">
+            details
+          </label>
+          <Details weather={weather} />
         </div>
       )}
     </>

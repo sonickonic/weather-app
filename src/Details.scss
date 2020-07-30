@@ -1,0 +1,93 @@
+.details {
+  &__input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__label {
+    position: relative;
+    margin: 0 auto;
+    padding: 0.3em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 14px;
+    margin-top: auto;
+    cursor: pointer;
+    transition: all 1000ms ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -25px;
+      background-color: #000000;
+      width: 50px;
+      height: 1px;
+      bottom: 0;
+    }
+
+    &:hover {
+      animation: fonter 1000ms infinite ease-out;
+    }
+  }
+
+  &__input:checked ~ .details__label {
+    transform:translateY(-100px);
+  }
+
+  &__input:checked ~ .details__container {
+    margin-bottom: 5rem;
+  }
+
+  &__container {
+    position: absolute;
+    width: 20em;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -120px;
+    margin-bottom: -120px;
+    transition: all 1000ms ease-out;
+    overflow: hidden;
+  }
+
+  &__container--row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container--margin-top {
+    margin-top: 2rem;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 18px;
+    text-align: right;
+  }
+
+  &__description {
+    line-height: 14px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+}
+
+@keyframes fonter {
+  0% {
+    font-style: italic;
+  }
+
+  50% {
+    font-family: monospace;
+    font-style: bold;
+  }
+
+  100% {
+    font-family: bookman;
+  }
+}
